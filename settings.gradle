@@ -1,1 +1,1 @@
-include ':tsapplication'
+include ':tsapplication', ':base'
