@@ -34,4 +34,5 @@ dependencies {
         releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
         testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
     }
+    compile 'com.android.support:appcompat-v7:25.3.1'
 }
