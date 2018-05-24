@@ -17,13 +17,11 @@
         <!-- Status Bar -->
         <item name="android:windowTranslucentStatus" tools:targetApi="kitkat">true</item>
         <!-- Navigation Bar -->
-        <!--
-                <item name="android:windowTranslucentNavigation" tools:targetApi="kitkat">true</item>
-        -->
+        <item name="android:windowTranslucentNavigation" tools:targetApi="kitkat">true</item>
+        <item name="android:windowIsTranslucent">false</item>
     </style>
-
-
+      
     <style name="Welcome_WindowBackground_Theme" parent="WelcomeTheme">
-        <item name="android:windowBackground">@mipmap/welcome</item>
+        <item name="android:windowBackground">@drawable/app_welcome_bg</item>
     </style>
 </resources>

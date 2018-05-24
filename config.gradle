@@ -1,21 +1,20 @@
 ext {
     android = [
-            compileSdkVersion       : 25,
+            compileSdkVersion       : 26,
             buildToolsVersion       : "${buildTools_Version}",
             minSdkVersion           : 15,
-            targetSdkVersion        : 25,
+            targetSdkVersion        : 26,
             androidSupportSdkVersion: "${buildTools_Version}",
     ]
 
     dependencies = [
-            arouterapi     : 'com.alibaba:arouter-api:1.2.1',
-            aroutercompiler: 'com.alibaba:arouter-compiler:1.1.2',
-            supportdesign  : 'com.android.support:design:23.4.0',
-            recyclerviewv7 : 'com.android.support:recyclerview-v7:23.4.0',
-            supportv4      : 'com.android.support:support-v4:23.4.0',
-            appcompatv7    : 'com.android.support:appcompat-v7:23.4.0',
+            supportdesign : 'com.android.support:design:' + "${buildTools_Version}",
+            recyclerviewv7: 'com.android.support:recyclerview-v7:' + "${buildTools_Version}",
+            supportv4     : 'com.android.support:support-v4:' + "${buildTools_Version}",
+            appcompatv7   : 'com.android.support:appcompat-v7:' + "${buildTools_Version}",
+            constraint    : 'com.android.support.constraint:constraint-layout:1.1.0',
             //分包
-            multidex       : 'com.android.support:multidex:1.0.1',
+            multidex      : 'com.android.support:multidex:1.0.1',
     ]
     //home是否是作为模块，true的时候是，false的时候可以独立运行，不想改了ORZ
     isMouleDebugHome = true;
