@@ -6,7 +6,6 @@ ext {
             targetSdkVersion        : 26,
             androidSupportSdkVersion: "${buildTools_Version}",
     ]
-
     dependencies = [
             supportdesign : 'com.android.support:design:' + "${buildTools_Version}",
             recyclerviewv7: 'com.android.support:recyclerview-v7:' + "${buildTools_Version}",
@@ -16,6 +15,7 @@ ext {
             //分包
             multidex      : 'com.android.support:multidex:1.0.1',
     ]
+
     //home是否是作为模块，true的时候是，false的时候可以独立运行，不想改了ORZ
     isMouleDebugHome = true;
     //module1是否是作为模块，true的时候是，false的时候可以独立运行
