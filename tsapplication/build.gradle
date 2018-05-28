@@ -14,17 +14,17 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
-    
-    signingConfigs{
-        release{
+
+    signingConfigs {
+        release {
             storeFile file('/key/TongsonKey.jks')
             storePassword '123456'
             keyAlias 'TongsonKey'
             keyPassword '123456'
         }
     }
-    
-    
+
+
     buildTypes {
         release {
             signingConfig signingConfigs.release
@@ -41,11 +41,12 @@ dependencies {
 
     implementation project(':base')
 
+    implementation rootProject.ext.dependencies.supportVectorDrawable
+    implementation rootProject.ext.dependencies.supportdesign
     implementation rootProject.ext.dependencies.appcompatv7
-
     implementation rootProject.ext.dependencies.constraint
 
-
+    implementation 'com.android.support:support-v4:27.1.1'
     dependencies {
         debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5'
         releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'

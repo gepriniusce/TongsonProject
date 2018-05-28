@@ -33,6 +33,6 @@ public class WelcomeActivity extends AppCompatActivity {
                 }
             }
         }, 2 * 1000);
-//        setContentView(R.layout.activity_main);
+//        setContentView(R.layout.activity_base);
     }
 }

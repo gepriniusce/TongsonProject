@@ -1,12 +1,13 @@
 ext {
     android = [
-            compileSdkVersion       : 26,
+            compileSdkVersion       : 27,
             buildToolsVersion       : "${buildTools_Version}",
             minSdkVersion           : 15,
-            targetSdkVersion        : 26,
+            targetSdkVersion        : 27,
             androidSupportSdkVersion: "${buildTools_Version}",
     ]
     dependencies = [
+            supportVectorDrawable : 'com.android.support:support-vector-drawable:' + "${buildTools_Version}",
             supportdesign : 'com.android.support:design:' + "${buildTools_Version}",
             recyclerviewv7: 'com.android.support:recyclerview-v7:' + "${buildTools_Version}",
             supportv4     : 'com.android.support:support-v4:' + "${buildTools_Version}",
