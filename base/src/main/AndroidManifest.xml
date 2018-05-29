@@ -26,6 +26,17 @@
             android:label="@string/title_activity_tab"
             android:theme="@style/AppTheme">
         </activity>
+        <activity
+            android:name=".ui.actionbar.FullscreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_fullscreen"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+            android:name=".ui.actionbar.BasicActivity"
+            android:label="@string/title_activity_basic"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
