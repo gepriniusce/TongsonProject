@@ -28,6 +28,7 @@ import com.squareup.leakcanary.LeakCanary;
 public class InitializeService extends IntentService {
 
     private static final String ACTION_INIT_WHEN_APP_CREATE = "com.mmc.hellogit.action.INIT";
+    private static final String NAME = "com.mmc.InitializeService.action.INIT";
     Application myApplication;
 
     /**
@@ -36,7 +37,7 @@ public class InitializeService extends IntentService {
      * @param application Used to name the worker thread, important only for debugging.
      */
     public InitializeService(Application application) {
-        super("InitializeService");
+        super(NAME);
         this.myApplication = application;
     }
 
@@ -45,35 +46,35 @@ public class InitializeService extends IntentService {
     }
 
     public InitializeService() {
-        super("InitializeService");
+        super(NAME);
     }
 
 
     @Override
     public IBinder onBind(Intent intent) {
-        //        System.out.println("onBind");
         return super.onBind(intent);
+        //        System.out.println("onBind");
     }
 
 
     @Override
     public void onCreate() {
-        //        System.out.println("onCreate");
         super.onCreate();
+        //        System.out.println("onCreate");
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        //        System.out.println("onStartCommand");
         return super.onStartCommand(intent, flags, startId);
+        //        System.out.println("onStartCommand");
     }
 
 
     public static void start(Context context) {
-        //        System.out.println("onStart");
         Intent intent = new Intent(context, InitializeService.class);
         intent.setAction(ACTION_INIT_WHEN_APP_CREATE);
         context.startService(intent);
+        //        System.out.println("onStart");
     }
 
 
@@ -96,8 +97,8 @@ public class InitializeService extends IntentService {
 
     @Override
     public void onDestroy() {
-        //        System.out.println("onDestroy");
         super.onDestroy();
+        //        System.out.println("onDestroy");
     }
 
 

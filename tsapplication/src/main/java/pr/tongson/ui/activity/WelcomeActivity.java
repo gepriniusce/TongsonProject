@@ -1,4 +1,4 @@
-package pr.tongson;
+package pr.tongson.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -32,7 +32,7 @@ public class WelcomeActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-        }, 2 * 1000);
-//        setContentView(R.layout.activity_base);
+        }, 100);
+        //        setContentView(R.layout.activity_base);
     }
 }
