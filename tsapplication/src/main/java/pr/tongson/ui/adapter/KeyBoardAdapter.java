@@ -63,7 +63,7 @@ public class KeyBoardAdapter extends RecyclerView.Adapter<KeyBoardAdapter.MyView
         holder.keyNameTv.setText(keyNames[position]);
         ViewGroup.LayoutParams lp = holder.keyNameTv.getLayoutParams();
         lp.width = itemWidth;
-        lp.height = itemWidth;
+        //lp.height = itemWidth;
         holder.keyNameTv.setLayoutParams(lp);
         setClick(holder.itemView, position);
     }
@@ -99,4 +99,7 @@ public class KeyBoardAdapter extends RecyclerView.Adapter<KeyBoardAdapter.MyView
         });
     }
 
+    public String[] getKeyNames() {
+        return keyNames;
+    }
 }

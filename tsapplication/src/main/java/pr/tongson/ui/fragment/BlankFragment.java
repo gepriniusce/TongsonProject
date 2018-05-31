@@ -19,6 +19,11 @@ import pr.tongson.ui.adapter.KeyBoardAdapter;
 public class BlankFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
+    private StringBuilder mStringBuilder;
+    /**
+     * 备忘录
+     */
+    private String[] mMementoStack;
 
     public BlankFragment() {
         // Required empty public constructor
@@ -28,6 +33,7 @@ public class BlankFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mStringBuilder = new StringBuilder();
     }
 
     @Override
@@ -52,8 +58,10 @@ public class BlankFragment extends Fragment {
         mKeyBoardAdapter.setOnItemClickLitener(new KeyBoardAdapter.OnItemClickLitener() {
             @Override
             public void onItemClick(View view, int position) {
-                
+                positionDo(position);
+
             }
+
 
             @Override
             public void onItemLongClick(View view, int position) {
@@ -61,6 +69,27 @@ public class BlankFragment extends Fragment {
             }
         });
     }
+
+    private void positionDo(int position) {
+        switch (position) {
+            case 0:
+                mDisplayTv.setText("");
+                break;
+            case 1:
+                 break;
+            case 2:
+                mDisplayTv.setText("");
+                break;
+            case 3:
+                mDisplayTv.setText("");
+                break;
+            default:
+                mStringBuilder.append(mKeyBoardAdapter.getKeyNames()[position]);
+                mDisplayTv.setText(mStringBuilder);
+                break;
+        }
+    }
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
