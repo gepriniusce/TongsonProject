@@ -1,4 +1,4 @@
-package pr.tongson.base.dsa;
+package pr.tongson.base.dsa.stack;
 
 /**
  * <b>Create Date:</b> 2018/6/27<br>

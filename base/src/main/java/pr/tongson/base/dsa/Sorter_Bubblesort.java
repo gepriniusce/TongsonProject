@@ -19,14 +19,14 @@ package pr.tongson.base.dsa;
 //    }
 //
 //    @Override
-//    public void sort(CharSequence S) {
-//        int n = S.getSize();
+//    public void sort(CharSequence mStack) {
+//        int n = mStack.getSize();
 //        for (int i = 0; i < n; i++) {
 //            for (int j = 0; j < n - i - 1; j++) {
-//                if (0 < C.compare(S.getAtRank(j), S.getAtRank(j + 1))) {
-//                    Object temp = S.getAtRank(j);
-//                    S.replaceAtRank(j, S.getAtRank(j + 1));
-//                    S.replaceAtRank(j + 1, temp);
+//                if (0 < C.compare(mStack.getAtRank(j), mStack.getAtRank(j + 1))) {
+//                    Object temp = mStack.getAtRank(j);
+//                    mStack.replaceAtRank(j, mStack.getAtRank(j + 1));
+//                    mStack.replaceAtRank(j + 1, temp);
 //                }
 //            }
 //        }
