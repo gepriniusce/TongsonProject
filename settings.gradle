@@ -1,1 +1,1 @@
-include ':tsapplication', ':base'
+include ':tsapplication', ':base', ':lib_dsa'

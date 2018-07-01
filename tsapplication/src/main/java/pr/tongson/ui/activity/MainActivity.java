@@ -17,13 +17,16 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import pr.tongson.R;
+import pr.tongson.base.ui.view.MyVG;
 import pr.tongson.ui.fragment.BlankFragment;
+import pr.tongson.ui.fragment.ViewFragment;
 
-public class MainActivity extends AppCompatActivity implements  BlankFragment.OnFragmentInteractionListener{
+public class MainActivity extends AppCompatActivity implements BlankFragment.OnFragmentInteractionListener {
     private SectionsPagerAdapter mSectionsPagerAdapter;
-    
+
     private ViewPager mViewPager;
     private TabLayout mTabLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements  BlankFragment.On
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
         mTabLayout = (TabLayout) findViewById(R.id.tabs);
-        mTabLayout.setupWithViewPager(mViewPager);
+        //        mTabLayout.setupWithViewPager(mViewPager);
 
   /*      FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -51,6 +54,45 @@ public class MainActivity extends AppCompatActivity implements  BlankFragment.On
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show();
             }
         });*/
+
+        mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                if (tab.getPosition() <= mSectionsPagerAdapter.getCount()) {
+                    mViewPager.setCurrentItem(tab.getPosition());
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                mTabLayout.setScrollPosition(position, 0, true);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+            }
+        });
+
+
+        MyVG myVG=new MyVG(this);
+        myVG.show();
     }
 
 
@@ -83,21 +125,25 @@ public class MainActivity extends AppCompatActivity implements  BlankFragment.On
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
+        private Fragment[] mFragments;
+
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
+            mFragments = new Fragment[]{new BlankFragment(), new ViewFragment()};
         }
 
         @Override
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return new BlankFragment();
+
+            return mFragments[position];
         }
 
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 1;
+            return mFragments.length;
         }
     }
 

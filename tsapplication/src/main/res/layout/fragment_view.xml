@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+              android:orientation="vertical"
+             tools:context=".ui.fragment.ViewFragment">
+
+    <!--android:singleLine="true" //单行显示
+android:ellipsize="marquee" //跑马灯显示(动画横向移动)
+android:marqueeRepeatLimit="marquee_forever"//永久滚动
+android:focusable="true" //控件是否能够获取焦点
+android:focusableInTouchMode="true" //是否在触摸模式下获得焦点-->
+    <pr.tongson.base.ui.view.AimiTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:text="@string/hello_blank_fragment"/>
+
+</LinearLayout>
